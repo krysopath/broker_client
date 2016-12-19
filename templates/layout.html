@@ -1,0 +1,18 @@
+<!doctype html>
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<title>Broker API</title>
+
+<div class=page>
+    <h1>Broker API</h1>
+    <p align="right">connect with networked entities!</p>
+    <div class=metanav>
+        <a href="{{ url_for('self') }}">self</a>
+        <a href="{{ url_for('get_users') }}">users</a>
+        <a href="{{ url_for('logout') }}"></a>
+    </div>
+    {% block body %}
+
+    {% endblock %}
+</div>

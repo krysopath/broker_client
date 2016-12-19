@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2><p align="left">{{user.fullname}}</p></h2>
+    {% if user.jids %}
+        jids: {% for jid in user.jids.values() %} {{ jid }}, {% endfor %}
+    {% endif %}
+    <br>
+    {% if user.emails %}
+        emails: {% for email in user.emails.values() %} {{ email }}, {% endfor %}
+    {% endif %}
+
+    {% if user.friends %}
+    <p>
+        friends: {% for friend in user.friends.values() %}
+            <a href="{{ url_for('get_user_by_name', username=friend) }}">{{friend}}</a>, {% endfor %}</p>
+    {% endif %}
+
+<p align="right">{{user.name}}, {{user.group}}, {{user.rank}}</p>
+{% endblock %}

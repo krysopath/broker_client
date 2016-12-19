@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+{% for user in users %}
+    <h2><p align="left">{{user.fullname}}</p></h2>
+    <p align="right">{{user.name}}, {{user.group}}, {{user.rank}}</p>
+    {% if user.jids %}
+        jids: {% for jid in user.jids.values()%} {{ jid }}, {% endfor %}
+    {% endif %}
+    <br>
+    {% if user.emails %}
+        emails: {% for email in user.emails.values()%} {{ email }}, {% endfor %}
+    {% endif %}
+    <br>
+    {% if user.friends %}
+        friends: {% for friend in user.friends.values()%} {{ friend }}, {% endfor %}
+    {% endif %}
+{% endfor %}
+{% endblock %}

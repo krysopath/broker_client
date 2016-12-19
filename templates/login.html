@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>login</h1>
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+    <form action="" method="post">
+        <dl>
+            <dt>username:
+            <dd><input type=text name=username value="{{request.form['username'] }}">
+            <dt>passphrase:
+            <dd><input type=password name=password>
+        </dl>
+<p align="left"><input type=submit value=login></p>
+</form>
+<p align="right">
+    You don't have an account to spam nonsense into the foolb0x?
+    <br>Nullum crimen sine lege!
+</p>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if user %}
+<h2>{{ user.fullname }}</h2>
+#{{ user.group }}
+<p align="justify">
+    {% for friend in friends.values() %}
+    <a href="{{ url_for('get_user_by_name', username=friend) }}">{{friend}}</a>{% endfor %}</p>
+
+
+<p align="right">
+    {{ creation }} as {{ user.name }}
+</p>
+
+{% else %}
+<em>Unbelievable. No entries here so far</em>
+
+{% endif %}
+{% endblock %}
